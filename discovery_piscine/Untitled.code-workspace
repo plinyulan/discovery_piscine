@@ -1,0 +1,37 @@
+{
+	"folders": [
+		{
+			"path": "cell01"
+		},
+		{
+			"path": "cell1.0/ex1.0"
+		},
+		{
+			"path": "cell1.1"
+		},
+		{
+			"path": "cell1.2"
+		},
+		{
+			"path": "cell1.3"
+		},
+		{
+			"path": "cell1.4"
+		},
+		{
+			"path": "cell1.5"
+		},
+		{
+			"path": "cell1.6"
+		},
+		{
+			"path": "cell02"
+		},
+		{
+			"path": "cell03"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "cell03"
+	}
+}

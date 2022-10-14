@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+<body>
+ <div class="clearfix">
+   <div class="box" style="background-color:rgb(211, 31, 31)">
+    <p>frist cell.</p>
+    </div>
+     <div class="box" style="background-color:rgb(243, 170, 122)">
+     <p>second cell.</p>
+</body>
+</html>
+

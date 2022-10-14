@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <!-- <meta charset="UTF-8" />
+                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+             <title>calcu</title>
+         <style>
+            body{
+                background:linear-gradient(90deg,pink,blue);
+            }
+            .inputCal {
+            text-align: center;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inputCal input,
+        select,
+        button {
+            padding: 1rem;
+            margin: 1rem;
+        }
+            </style> 
+        <script>
+        setInterval(() => {
+            alert("Please, use me...");
+        }, 30000);
+        function calc() {
+            let num1 = document.getElementById("num1").value;
+            let oper = document.getElementById("oper").value;
+            let num2 = document.getElementById("num2").value;
+
+            let n = 0;
+
+            num1 = parseInt(num1);
+            num2 = parseInt(num2);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                n = "Error :(";
+            } else if (num1 < 0 || num2 < 0) {
+                n = "Error :(";
+            } else if (oper == "+") {
+                n = num1 + num2;
+            } else if (oper == "-") {
+                n = num1 - num2;
+            } else if (oper == "*") {
+                n = num1 * num2;
+            } else if (oper == "/") {
+                if (num2 == 0) {
+                    n = "It's over 9000!";
+                } else {
+                    n = num1 / num2;
+                }
+            } else if (oper == "%") {
+                if (num2 == 0) {
+                    n = "It's over 9000!";
+                } else {
+                    n = num1 % num2;
+                }
+            } else {
+                n = "Error :(";
+            }
+
+            document.getElementById("num1").value = " ";
+            document.getElementById("oper").value = "+";
+            document.getElementById("num2").value = " ";
+
+            alert(n);
+            console.log(n); 
+        }
+    </script>
+    </head> 
+<body>
+        <div class="inputCal">
+                <input type="text" id="num1" name="num2" value=" " />
+                <select id="oper">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                    <option value="%">%</option>
+                </select>
+                <input type="text" id="num2" name="num2" value=" " />
+                <button type="button" onclick="calc();">Try me!</button>
+            </div>
+</body>
+</html>
