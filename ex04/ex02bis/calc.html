@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .container {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: auto auto auto auto;
+            column-gap: 20px;
+            height: 100vh
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" id="left">
+        <select id="opeator">
+            <option value="0">+</option>
+            <option value="1">-</option>
+            <option value="2">*</option>
+            <option value="3">/</option>
+            <option value="4">%</option>
+        </select>
+        <input type="text" id="right">
+        <button onclick="handleClick()">Try me!</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+        integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+    <script>
+        const opeators = ["+", "-", "*", "/", "%"]
+        const handleClick = () => {
+
+            const opeator = document.getElementById("opeator").value
+            const left = Number($("#left").val())
+            const right = Number($("#right").val())
+            if (left < 0 || right < 0 || Number.isNaN(left) || Number.isNaN(right)) return alert("Error :(") & console.log("Error :(")
+            if ((opeator == 3 || opeator == 4) && right == 0) return alert("It's over 9000!") & console.log("It's over 9000!")
+            const res = eval(`${left} ${opeators[opeator]} ${right}`)
+            alert(res)
+            console.log(res)
+        }
+        setInterval(() => {
+            alert("Please, use me...")
+        }, 30 * 1000)
+    </script>
+</body>
+
+</html>

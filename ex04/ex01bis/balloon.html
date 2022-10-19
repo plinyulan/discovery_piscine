@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        .circle {
+            background-color: red;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+        <div class="circle" id="circle" onmouseout="smaller(this)">
+            </div>
+            <script>
+                $("#circle").click(function(){
+                    console.log($("#circle").css("backgroundColor"))
+                    if($("#circle").css("backgroundColor") == "rgb(255, 0, 0)")
+                       $("#circle").css("backgroundColor","rgb(0, 255, 0)" ) 
+                    else if($("#circle").css("backgroundColor") == "rgb(0, 255, 0)")   
+                       $("#circle").css("backgroundColor","rgb(0, 0, 255)")
+                    else 
+                       $("#circle").css("backgroundColor","rgb(255, 0, 0)")  
+                       console.log(parseInt($("#circle").css("height")))
+                       if(parseInt($("#circle").css("height"))< 420)
+                       {
+                           $("#circle").css("height",(parseInt($("#circle").css("height"))+10).toString()+"px")
+                           $("#circle").css("width",(parseInt($("#circle").css("width"))+10).toString()+"px")
+                       }   
+                    else 
+                        {
+                            $("#circle").css({"height":"200px"}) 
+                            $("#circle").css({"width":"200px"})  
+                        }   
+                //  $("#circle").click(function(){});
+
+                })
+            </script>
+            <script type="text/javascript">
+                function GetBigger(element) {
+                    console.log(document.getElementById("circle").style.backgroundColor);
+                    console.log(element.style["background-color"]);
+                    console.log("document.getElementbyId()");
+        
+                    if (element.style.backgroundColor == "red") {
+                        element.style.backgroundColor = "green";
+                    } else if (element.style.backgroundColor == "green") {
+                        element.style.backgroundColor = "blue";
+                    } else
+                        element.style.backgroundColor = "red";
+                    if (element.offsetHeight < 420) {
+                        element.style.height = (element.offsetHeight + 10) + "px";
+                        element.style.width = (element.offsetWidth + 10) + "px";
+                    } else {
+                        element.style.height = "200px";
+                        element.style.width = "200px";
+                    }
+                }
+        
+                function smaller(element) {
+                    if (element.offsetWidth > "200") {
+                        if (element.style.backgroundColor == "green") {
+                            element.style.backgroundColor = "red";
+                        } else if (element.style.backgroundColor == "blue") {
+                            element.style.backgroundColor = "green";
+                        } else
+                            element.style.backgroundColor = "blue";
+                        element.style.height = (element.offsetHeight - 5) + "px";
+                        element.style.width = (element.offsetWidth - 5) + "px";
+                    }
+                }
+            </script>
+</body>
+</html>

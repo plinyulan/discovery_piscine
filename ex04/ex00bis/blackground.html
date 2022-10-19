@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="background.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <button id="btn">
+            Click   &#33;
+        </button>
+        <script>
+            $("#btn").click(function(){
+                $("body").css("background-color", "rgb(" + Math.floor((Math.random()) * 256) + ", " + Math.floor((Math.random()) * 256) + ", "+ Math.floor((Math.random()) * 256) + ")")
+            })
+        </script>
+    </body>
+</html>
